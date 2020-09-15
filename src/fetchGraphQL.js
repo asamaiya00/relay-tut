@@ -12,7 +12,7 @@ async function fetchGraphQl(text, variables) {
       variables,
     }),
   });
-
+ 
   return await response.json();
 }
 
