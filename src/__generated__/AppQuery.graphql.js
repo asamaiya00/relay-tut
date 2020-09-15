@@ -8,11 +8,11 @@
 
 /*::
 import type { ConcreteRequest } from 'relay-runtime';
-type Customers_viewer$ref = any;
+type Customers_Customers$ref = any;
 export type AppQueryVariables = {||};
 export type AppQueryResponse = {|
   +customers: ?$ReadOnlyArray<?{|
-    +$fragmentRefs: Customers_viewer$ref
+    +$fragmentRefs: Customers_Customers$ref
   |}>
 |};
 export type AppQuery = {|
@@ -25,19 +25,19 @@ export type AppQuery = {|
 /*
 query AppQuery {
   customers {
-    ...Customers_viewer
+    ...Customers_Customers
   }
 }
 
-fragment Customer_cus on Customer {
+fragment Customer_Customer on Customer {
   id
   name
   age
   email
 }
 
-fragment Customers_viewer on Customer {
-  ...Customer_cus
+fragment Customers_Customers on Customer {
+  ...Customer_Customer
 }
 */
 
@@ -59,7 +59,7 @@ const node/*: ConcreteRequest*/ = {
           {
             "args": null,
             "kind": "FragmentSpread",
-            "name": "Customers_viewer"
+            "name": "Customers_Customers"
           }
         ],
         "storageKey": null
@@ -116,15 +116,15 @@ const node/*: ConcreteRequest*/ = {
     ]
   },
   "params": {
-    "cacheID": "8764b4883e2f2e0a08587687c27d0a18",
+    "cacheID": "9fd60a2e44f37023724503ef77393427",
     "id": null,
     "metadata": {},
     "name": "AppQuery",
     "operationKind": "query",
-    "text": "query AppQuery {\n  customers {\n    ...Customers_viewer\n  }\n}\n\nfragment Customer_cus on Customer {\n  id\n  name\n  age\n  email\n}\n\nfragment Customers_viewer on Customer {\n  ...Customer_cus\n}\n"
+    "text": "query AppQuery {\n  customers {\n    ...Customers_Customers\n  }\n}\n\nfragment Customer_Customer on Customer {\n  id\n  name\n  age\n  email\n}\n\nfragment Customers_Customers on Customer {\n  ...Customer_Customer\n}\n"
   }
 };
 // prettier-ignore
-(node/*: any*/).hash = '3cc57d54cac12cf0d6494b8a0a184004';
+(node/*: any*/).hash = 'd605afb156b888d2429c0c99d1003782';
 
 module.exports = node;

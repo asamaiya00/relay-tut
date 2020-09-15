@@ -6,7 +6,8 @@ class Customer extends React.Component {
     console.log(this.props);
     return (
       <div className="pa3 bg-black-05 ma3">
-       {/* <div
+        <h4>Customer</h4>
+        {/* <div
           className="w-100"
           style={{
             backgroundImage: `url(${this.props.Customer.imageUrl})`,
@@ -27,14 +28,13 @@ class Customer extends React.Component {
   _handleDelete = () => {};
 }
 
-export default createFragmentContainer(
-  Customer,
-  graphql`
-    fragment Customer_cus on Customer {
+export default createFragmentContainer(Customer, {
+  Customer: graphql`
+    fragment Customer_Customer on Customer {
       id
-      name 
+      name
       age
       email
     }
-  `
-);
+  `,
+});

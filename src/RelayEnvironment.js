@@ -16,7 +16,6 @@ const network = Network.create((operation, variables) => {
       variables,
     }),
   }).then(response => {  
-    console.log(response)
     return response.json()
   })
 })

@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { QueryRenderer, graphql } from 'react-relay';
 import environment from './RelayEnvironment';
-import ListPage from './components/Customers';
+import Customers from './components/Customers';
 
 const AppQuery = graphql`
   query AppQuery {
     customers {
-      ...Customers_viewer
+      ...Customers_Customers
     }
   }
 `
@@ -21,7 +21,7 @@ class App extends Component {
           if (error) {
             return <div>{error.message}</div>
           } else if (props) {
-            return <ListPage viewer={props.customers} />
+            return <Customers customers={props.customers} />
           }
           return <div>Loading</div>
         }}

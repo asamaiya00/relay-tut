@@ -21,25 +21,24 @@ import { createFragmentContainer, graphql } from 'react-relay';
 
 class Customers extends React.Component {
   render() {
-      console.log(this.props)
+    console.log(this.props);
     return (
       <div className="w-100 flex justify-center">
         <div className="w-100" style={{ maxWidth: 400 }}>
-            <h1>Customers</h1> 
-        {/*mockPostData.map(({node}) =>
-            <Post key={node.id} post={node} />
-    )*/}
+          <h1>Customers</h1>
+          {this.props.customers.map(( node ) => (
+            <Customer key={node.__id} customer={node} />
+          ))}
         </div>
       </div>
     );
   }
 }
 
-export default createFragmentContainer(
-  Customers,
-  graphql`
-    fragment Customers_viewer on Customer {
-      ...Customer_cus
+export default createFragmentContainer(Customers, {
+  Customers: graphql`
+    fragment Customers_Customers on Customer {
+      ...Customer_Customer
     }
-  `
-);
+  `,
+});
