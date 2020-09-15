@@ -13,10 +13,11 @@
     "relay-runtime": "^10.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "npm run relay && react-scripts start",
+    "build": "npm run relay && react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "relay": "relay-compiler --schema ./schema.graphql --src ./src"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -37,5 +38,13 @@
     "babel-plugin-relay": "^10.0.1",
     "graphql": "^15.3.0",
     "relay-compiler": "^10.0.1"
+  },
+  "babel": {
+    "presets": [
+      "react-app"
+    ],
+    "plugins": [
+      "relay"
+    ]
   }
 }
