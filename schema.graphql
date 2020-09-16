@@ -13,12 +13,13 @@ type Customer {
   id: String
   name: String
   email: String
+  imageUrl: String
   age: Int
 }
 
 type Mutation {
-  addCustomer(name: String!, email: String!, age: Int!): Customer
-  updateCustomer(id: String!, name: String, email: String, age: Int): Customer
+  addCustomer(name: String!, email: String!, age: Int!, imageUrl: String!): Customer
+  updateCustomer(id: String!, name: String, imageUrl: String, email: String, age: Int): Customer
   deleteCustomer(id: String!): Customer
 }
 

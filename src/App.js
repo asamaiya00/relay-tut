@@ -5,7 +5,7 @@ import Customers from './components/Customers';
 
 const AppQuery = graphql`
   query AppQuery {
-    customers {
+    customers { 
       ...Customers_Customers
     }
   }

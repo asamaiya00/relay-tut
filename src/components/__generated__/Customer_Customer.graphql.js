@@ -9,19 +9,20 @@
 /*::
 import type { ReaderFragment } from 'relay-runtime';
 import type { FragmentReference } from "relay-runtime";
-declare export opaque type Customer_Customer$ref: FragmentReference;
-declare export opaque type Customer_Customer$fragmentType: Customer_Customer$ref;
-export type Customer_Customer = {|
+declare export opaque type Customer_customer$ref: FragmentReference;
+declare export opaque type Customer_customer$fragmentType: Customer_customer$ref;
+export type Customer_customer = {|
   +id: ?string,
   +name: ?string,
+  +imageUrl: ?string,
   +age: ?number,
   +email: ?string,
-  +$refType: Customer_Customer$ref,
+  +$refType: Customer_customer$ref,
 |};
-export type Customer_Customer$data = Customer_Customer;
-export type Customer_Customer$key = {
-  +$data?: Customer_Customer$data,
-  +$fragmentRefs: Customer_Customer$ref,
+export type Customer_customer$data = Customer_customer;
+export type Customer_customer$key = {
+  +$data?: Customer_customer$data,
+  +$fragmentRefs: Customer_customer$ref,
   ...
 };
 */
@@ -31,7 +32,7 @@ const node/*: ReaderFragment*/ = {
   "argumentDefinitions": [],
   "kind": "Fragment",
   "metadata": null,
-  "name": "Customer_Customer",
+  "name": "Customer_customer",
   "selections": [
     {
       "alias": null,
@@ -45,6 +46,13 @@ const node/*: ReaderFragment*/ = {
       "args": null,
       "kind": "ScalarField",
       "name": "name",
+      "storageKey": null
+    },
+    {
+      "alias": null,
+      "args": null,
+      "kind": "ScalarField",
+      "name": "imageUrl",
       "storageKey": null
     },
     {
@@ -66,6 +74,6 @@ const node/*: ReaderFragment*/ = {
   "abstractKey": null
 };
 // prettier-ignore
-(node/*: any*/).hash = '2aebf5ed3a1217a4cfcaf53fce4b7414';
+(node/*: any*/).hash = 'fb3e77ee65e0ec33528e2d899d472e4f';
 
 module.exports = node;

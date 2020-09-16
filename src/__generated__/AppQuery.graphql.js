@@ -29,15 +29,16 @@ query AppQuery {
   }
 }
 
-fragment Customer_Customer on Customer {
+fragment Customer_customer on Customer {
   id
   name
+  imageUrl
   age
   email
 }
 
 fragment Customers_Customers on Customer {
-  ...Customer_Customer
+  ...Customer_customer
 }
 */
 
@@ -100,6 +101,13 @@ const node/*: ConcreteRequest*/ = {
             "alias": null,
             "args": null,
             "kind": "ScalarField",
+            "name": "imageUrl",
+            "storageKey": null
+          },
+          {
+            "alias": null,
+            "args": null,
+            "kind": "ScalarField",
             "name": "age",
             "storageKey": null
           },
@@ -116,12 +124,12 @@ const node/*: ConcreteRequest*/ = {
     ]
   },
   "params": {
-    "cacheID": "9fd60a2e44f37023724503ef77393427",
+    "cacheID": "786fa7127b846bee5cb2a29050edb16a",
     "id": null,
     "metadata": {},
     "name": "AppQuery",
     "operationKind": "query",
-    "text": "query AppQuery {\n  customers {\n    ...Customers_Customers\n  }\n}\n\nfragment Customer_Customer on Customer {\n  id\n  name\n  age\n  email\n}\n\nfragment Customers_Customers on Customer {\n  ...Customer_Customer\n}\n"
+    "text": "query AppQuery {\n  customers {\n    ...Customers_Customers\n  }\n}\n\nfragment Customer_customer on Customer {\n  id\n  name\n  imageUrl\n  age\n  email\n}\n\nfragment Customers_Customers on Customer {\n  ...Customer_customer\n}\n"
   }
 };
 // prettier-ignore
